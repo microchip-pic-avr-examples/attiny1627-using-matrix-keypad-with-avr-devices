@@ -1,0 +1,261 @@
+format_version: '2'
+name: My Project
+versions:
+  api: '1.0'
+  backend: 1.7.298
+  commit: 1e07622763d149970fd8808a8f12ff3b1e84e0d7
+  content: unknown
+  content_pack_name: unknown
+  format: '2'
+  frontend: 1.7.298
+  packs_version_avr8: 1.0.1408
+  packs_version_qtouch: unknown
+  packs_version_sam: 1.0.1373
+  version_backend: 1.7.298
+  version_frontend: ''
+board:
+  identifier: CustomBoard
+  device: ATtiny1627-MUR
+details: null
+application: null
+middlewares: {}
+drivers:
+  CLKCTRL:
+    user_label: CLKCTRL
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::CLKCTRL::driver_config_definition::CLKCTRL::Drivers:CLKCTRL:Init
+    functionality: System
+    api: Drivers:CLKCTRL:Init
+    configuration:
+      clkctrl_mclkctrla_cksel: 20MHz Internal Oscillator (OSC20M)
+      clkctrl_mclkctrla_clkout: false
+      clkctrl_mclkctrlb_pdiv: '6'
+      clkctrl_mclkctrlb_pen: true
+      clkctrl_mclklock_locken: false
+      clkctrl_osc16mctrla_runstdby: false
+      clkctrl_osc20mctrla_runstdby: false
+      clkctrl_osc32kctrla_runstdby: false
+      clkctrl_xosc32kctrla_csut: 1k cycles
+      clkctrl_xosc32kctrla_runstdby: false
+      clkctrl_xosc32kctrla_sel: false
+      cpu_clock_source: Main Clock (CLK_MAIN)
+      enable_clk_per: true
+      enable_extclk: false
+      enable_main: true
+      enable_osc16m: false
+      enable_osc20m: true
+      enable_osculp1k: false
+      enable_osculp32k: true
+      enable_tcd0: false
+      enable_xosc32kctrla: false
+      extosc: 32768
+      nvm_clock_source: Main Clock (CLK_MAIN)
+      osculp1k_clksel_clksel: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
+      ram_clock_source: Main Clock (CLK_MAIN)
+      tcd0_ctrla_clksel: 20MHz Internal Oscillator (OSC20M)
+      tcd0_ctrla_syncpres: '1'
+      xosc32kctrla_arch_enable: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: CPU
+          input: CPU
+          external: false
+          external_frequency: 0
+        configuration: {}
+  RTC_0:
+    user_label: RTC_0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::RTC::driver_config_definition::RTC::Drivers:RTC:Init
+    functionality: RTC
+    api: Drivers:RTC:Init
+    configuration:
+      enable_rtc: true
+      inc_isr_harness: false
+      rtc_clksel_clksel: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
+      rtc_cmp: 0
+      rtc_cnt: 0
+      rtc_ctrla_prescaler: '1'
+      rtc_ctrla_rtcen: true
+      rtc_ctrla_runstdby: false
+      rtc_dbgctrl_dbgrun: false
+      rtc_intctrl_cmp: false
+      rtc_intctrl_ovf: false
+      rtc_per: 65535
+      rtc_pitctrla_period: RTC Clock Cycles 32
+      rtc_pitctrla_piten: true
+      rtc_pitdbgctrl_dbgrun: false
+      rtc_pitintctrl_pi: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: RTC
+          input: RTC Clock (CLK_RTC)
+          external: false
+          external_frequency: 0
+        configuration:
+          rtc_clock_source: RTC Clock (CLK_RTC)
+  CPUINT:
+    user_label: CPUINT
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::CPUINT::driver_config_definition::CPUINT::Drivers:CPUINT:Init
+    functionality: System
+    api: Drivers:CPUINT:Init
+    configuration:
+      cpuint_ctrla_cvt: false
+      cpuint_ctrla_ivsel: false
+      cpuint_ctrla_lvl0rr: false
+      cpuint_global_interrupt: true
+      cpuint_lvl0pri_lvl0pri: 0
+      cpuint_lvl1vec_lvl1vec: 0
+      inc_isr_harness: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  SLPCTRL:
+    user_label: SLPCTRL
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::SLPCTRL::driver_config_definition::SLPCTRL::Drivers:SLPCTRL:Init
+    functionality: System
+    api: Drivers:SLPCTRL:Init
+    configuration:
+      slpctrl_ctrla_sen: false
+      slpctrl_ctrla_smode: Power-down Mode
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  BOD:
+    user_label: BOD
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::BOD::driver_config_definition::BOD::Drivers:BOD:Init
+    functionality: System
+    api: Drivers:BOD:Init
+    configuration:
+      bod_ctrla_sleep: Disabled
+      bod_intctrl_vlmcfg: Interrupt when supply goes below VLM level
+      bod_intctrl_vlmie: false
+      bod_vlmctrla_vlmlvl: VLM threshold 5% above BOD level
+      inc_isr_harness: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: BOD
+          input: 32KHz divided by 32
+          external: false
+          external_frequency: 0
+        configuration:
+          bod_clock_source: 32KHz divided by 32
+pads:
+  ROW2:
+    name: PA2
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA2
+    mode: Advanced
+    user_label: ROW2
+    configuration:
+      pad_dir: Out
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Interrupt disabled but input buffer enabled
+      pad_pull_config: Pull-up
+  LED_RED:
+    name: PB3
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB3
+    mode: Digital output
+    user_label: LED_RED
+    configuration:
+      pad_initial_level: High
+  LED_GREEN:
+    name: PB2
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB2
+    mode: Digital output
+    user_label: LED_GREEN
+    configuration:
+      pad_initial_level: High
+  ROW1:
+    name: PB1_TWI
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB1_TWI
+    mode: Advanced
+    user_label: ROW1
+    configuration:
+      pad_dir: Out
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Interrupt disabled but input buffer enabled
+      pad_pull_config: Pull-up
+  ROW0:
+    name: PB0_TWI
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB0_TWI
+    mode: Advanced
+    user_label: ROW0
+    configuration:
+      pad_dir: Out
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Interrupt disabled but input buffer enabled
+      pad_pull_config: Pull-up
+  COLUMN1:
+    name: PC0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC0
+    mode: Advanced
+    user_label: COLUMN1
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense Both Edges
+      pad_pull_config: Pull-up
+  COLUMN2:
+    name: PC1
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC1
+    mode: Advanced
+    user_label: COLUMN2
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense Both Edges
+      pad_pull_config: Pull-up
+  COLUMN3:
+    name: PC2
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC2
+    mode: Advanced
+    user_label: COLUMN3
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense Both Edges
+      pad_pull_config: Pull-up
+  COLUMN0:
+    name: PC3
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC3
+    mode: Advanced
+    user_label: COLUMN0
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense Both Edges
+      pad_pull_config: Pull-up
+  ROW3:
+    name: PA1
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA1
+    mode: Advanced
+    user_label: ROW3
+    configuration:
+      pad_dir: Out
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Interrupt disabled but input buffer enabled
+      pad_pull_config: Pull-up
+toolchain_options:
+- definition:
+    identifier: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::environment_definition::All:Atmel.Studio:7.0.0
+  configuration:
+    compiler_config:
+      avrgcc_compiler_miscellaneous_OtherFlags: -std=gnu99
+    linker_config:
+      avrgcc_linker_miscellaneous_LinkerFlags: ''

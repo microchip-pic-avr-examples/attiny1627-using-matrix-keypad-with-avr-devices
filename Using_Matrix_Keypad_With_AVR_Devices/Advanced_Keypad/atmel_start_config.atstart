@@ -1,0 +1,458 @@
+format_version: '2'
+name: My Project
+versions:
+  api: '1.0'
+  backend: 1.3.devel
+  commit: unknown
+  content: pab managed
+  content_pack_name: unknown
+  format: '2'
+  frontend: 1.3.1755
+board:
+  identifier: CustomBoard
+  device: ATtiny1627-MUR
+details: null
+application: null
+middlewares: {}
+drivers:
+  CLKCTRL:
+    user_label: CLKCTRL
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::CLKCTRL::driver_config_definition::CLKCTRL::Drivers:CLKCTRL:Init
+    functionality: System
+    api: Drivers:CLKCTRL:Init
+    configuration:
+      clkctrl_mclkctrla_cksel: 20MHz Internal Oscillator (OSC20M)
+      clkctrl_mclkctrla_clkout: false
+      clkctrl_mclkctrlb_pdiv: '6'
+      clkctrl_mclkctrlb_pen: false
+      clkctrl_mclklock_locken: false
+      clkctrl_osc16mctrla_runstdby: false
+      clkctrl_osc20mctrla_runstdby: false
+      clkctrl_osc32kctrla_runstdby: false
+      clkctrl_xosc32kctrla_csut: 1k cycles
+      clkctrl_xosc32kctrla_runstdby: false
+      clkctrl_xosc32kctrla_sel: false
+      cpu_clock_source: Main Clock (CLK_MAIN)
+      enable_clk_per: true
+      enable_extclk: true
+      enable_main: true
+      enable_osc16m: true
+      enable_osc20m: true
+      enable_osculp1k: true
+      enable_osculp32k: true
+      enable_tcd0: true
+      enable_xosc32kctrla: false
+      extosc: 32768
+      nvm_clock_source: Main Clock (CLK_MAIN)
+      osculp1k_clksel_clksel: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
+      ram_clock_source: Main Clock (CLK_MAIN)
+      tcd0_ctrla_clksel: 20MHz Internal Oscillator (OSC20M)
+      tcd0_ctrla_syncpres: '1'
+      xosc32kctrla_arch_enable: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: CPU
+          input: CPU
+        configuration: {}
+  RTC_0:
+    user_label: RTC_0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::RTC::driver_config_definition::RTC::Drivers:RTC:Init
+    functionality: RTC
+    api: Drivers:RTC:Init
+    configuration:
+      enable_rtc: true
+      inc_isr_harness: false
+      rtc_clksel_clksel: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
+      rtc_cmp: 0
+      rtc_cnt: 0
+      rtc_ctrla_prescaler: '1'
+      rtc_ctrla_rtcen: false
+      rtc_ctrla_runstdby: false
+      rtc_dbgctrl_dbgrun: false
+      rtc_intctrl_cmp: false
+      rtc_intctrl_ovf: false
+      rtc_per: 65535
+      rtc_pitctrla_period: 'Off'
+      rtc_pitctrla_piten: false
+      rtc_pitdbgctrl_dbgrun: false
+      rtc_pitintctrl_pi: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: RTC
+          input: RTC Clock (CLK_RTC)
+        configuration:
+          rtc_clock_source: RTC Clock (CLK_RTC)
+  EVENT_SYSTEM_0:
+    user_label: EVENT_SYSTEM_0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::EVSYS::driver_config_definition::EVSYS::Drivers:EVSYS:Init
+    functionality: Event_System
+    api: Drivers:EVSYS:Init
+    configuration:
+      evsys_channel0_gen: Periodic Interrupt Timer output 0
+      evsys_channel1_gen: 'Off'
+      evsys_channel2_gen: Port C Pin 0
+      evsys_channel3_gen: Port C Pin 1
+      evsys_channel4_gen: Port C Pin 2
+      evsys_channel5_gen: Port C Pin 3
+      evsys_user0_cclluta: Connect user to event channel 2
+      evsys_user0_ccllutb: Connect user to event channel 3
+      evsys_user0_usart: 'Off'
+      evsys_user1_cclluta: Connect user to event channel 4
+      evsys_user1_ccllutb: Connect user to event channel 5
+      evsys_user1_usart: 'Off'
+      evsys_user2_cclluta: 'Off'
+      evsys_user2_ccllutb: Connect user to event channel 0
+      evsys_user3_cclluta: 'Off'
+      evsys_user3_ccllutb: 'Off'
+      evsys_user_adc: 'Off'
+      evsys_user_evouta: 'Off'
+      evsys_user_evoutb: 'Off'
+      evsys_user_evoutc: 'Off'
+      evsys_user_tcaa: 'Off'
+      evsys_user_tcab: 'Off'
+      evsys_user_tcb0a: 'Off'
+      evsys_user_tcb0b: 'Off'
+      evsys_user_tcb1a: 'Off'
+      evsys_user_tcb1b: 'Off'
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  DIGITAL_GLUE_LOGIC_0:
+    user_label: DIGITAL_GLUE_LOGIC_0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::CCL::driver_config_definition::CCL::Drivers:CCL:Init
+    functionality: Digital_Glue_Logic
+    api: Drivers:CCL:Init
+    configuration:
+      ccl_clkper0_clk: true
+      ccl_clkper1_clk: true
+      ccl_clkper2_clk: true
+      ccl_clkper3_clk: false
+      ccl_ctrla_enable: true
+      ccl_ctrla_runstdby: false
+      ccl_e_persistance_0: ''
+      ccl_e_persistance_1: ''
+      ccl_e_persistance_2: a
+      ccl_e_persistance_3: ''
+      ccl_intctrl0_intmode0: Interrupt disabled
+      ccl_intctrl0_intmode1: Interrupt disabled
+      ccl_intctrl0_intmode2: Interrupt disabled
+      ccl_intctrl0_intmode3: Interrupt disabled
+      ccl_l_persistance_0: AND
+      ccl_l_persistance_1: AND
+      ccl_l_persistance_2: Custom
+      ccl_l_persistance_3: OR
+      ccl_lut0ctrla_clk: IN[2] is clocking the LUT
+      ccl_lut0ctrla_edgedet: Edge detector is disabled
+      ccl_lut0ctrla_filtsel: Filter disabled
+      ccl_lut0ctrla_luten: true
+      ccl_lut0ctrla_outen: true
+      ccl_lut0ctrlb_insel0_4809: Event input source A
+      ccl_lut0ctrlb_insel1_4809: Event input source B
+      ccl_lut0ctrlc_insel2_4809: Masked input
+      ccl_lut1ctrla_clk: IN[2] is clocking the LUT
+      ccl_lut1ctrla_edgedet: Edge detector is disabled
+      ccl_lut1ctrla_filtsel: Filter disabled
+      ccl_lut1ctrla_luten: true
+      ccl_lut1ctrla_outen: true
+      ccl_lut1ctrlb_insel0_4809: Linked LUT input source
+      ccl_lut1ctrlb_insel1_4809: Event input source A
+      ccl_lut1ctrlc_insel2_4809: Event input source B
+      ccl_lut2ctrla_clk: IN[2] is clocking the LUT
+      ccl_lut2ctrla_edgedet: Edge detector is disabled
+      ccl_lut2ctrla_filtsel: Filter enabled
+      ccl_lut2ctrla_luten: true
+      ccl_lut2ctrla_outen: true
+      ccl_lut2ctrlb_insel0_4809: Linked LUT input source
+      ccl_lut2ctrlb_insel1_4809: Event input source A
+      ccl_lut2ctrlc_insel2_4809: Event input source B
+      ccl_lut3ctrla_clk: IN[2] is clocking the LUT
+      ccl_lut3ctrla_edgedet: Edge detector is disabled
+      ccl_lut3ctrla_filtsel: Filter disabled
+      ccl_lut3ctrla_luten: false
+      ccl_lut3ctrla_outen: true
+      ccl_lut3ctrlb_insel0_4809: Masked input
+      ccl_lut3ctrlb_insel1_4809: Event input source A
+      ccl_lut3ctrlc_insel2_4809: Event input source B
+      ccl_seqctrl0_seqsel_0: Sequential logic disabled
+      ccl_seqctrl1_seqsel_1: Sequential logic disabled
+      ccl_truth0: 8
+      ccl_truth1: 128
+      ccl_truth2: 170
+      ccl_truth3: 84
+    optional_signals:
+    - identifier: DIGITAL_GLUE_LOGIC_0:LUT2_OUT/0
+      pad: PB6
+      mode: LUT0 Output
+      configuration: null
+      definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::optional_signal_definition::CCL.LUT2_OUT.0
+      name: CCL/LUT2_OUT/0
+      label: LUT2_OUT/0
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: CCL
+          input: Main Clock (CLK_MAIN)
+        configuration:
+          ccl_clock_source: Main Clock (CLK_MAIN)
+  CPUINT:
+    user_label: CPUINT
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::CPUINT::driver_config_definition::CPUINT::Drivers:CPUINT:Init
+    functionality: System
+    api: Drivers:CPUINT:Init
+    configuration:
+      cpuint_ctrla_cvt: false
+      cpuint_ctrla_ivsel: false
+      cpuint_ctrla_lvl0rr: false
+      cpuint_global_interrupt: true
+      cpuint_lvl0pri_lvl0pri: 0
+      cpuint_lvl1vec_lvl1vec: 0
+      inc_isr_harness: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  SLPCTRL:
+    user_label: SLPCTRL
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::SLPCTRL::driver_config_definition::SLPCTRL::Drivers:SLPCTRL:Init
+    functionality: System
+    api: Drivers:SLPCTRL:Init
+    configuration:
+      slpctrl_ctrla_sen: true
+      slpctrl_ctrla_smode: Power-down Mode
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group: null
+  BOD:
+    user_label: BOD
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::BOD::driver_config_definition::BOD::Drivers:BOD:Init
+    functionality: System
+    api: Drivers:BOD:Init
+    configuration:
+      bod_ctrla_sleep: Disabled
+      bod_intctrl_vlmcfg: Interrupt when supply goes above VLM level
+      bod_intctrl_vlmie: false
+      bod_vlmctrla_vlmlvl: VLM threshold 5% above BOD level
+      inc_isr_harness: false
+    optional_signals: []
+    variant: null
+    clocks:
+      domain_group:
+        nodes:
+        - name: BOD
+          input: 32KHz divided by 32
+        configuration:
+          bod_clock_source: 32KHz divided by 32
+pads:
+  ROW2:
+    name: PA2
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA2
+    mode: Digital output
+    user_label: ROW2
+    configuration: null
+  PA3:
+    name: PA3
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA3
+    mode: Advanced
+    user_label: PA3
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PA4:
+    name: PA4
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA4
+    mode: Advanced
+    user_label: PA4
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PA5:
+    name: PA5
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA5
+    mode: Advanced
+    user_label: PA5
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PA6:
+    name: PA6
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA6
+    mode: Advanced
+    user_label: PA6
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PA7:
+    name: PA7
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA7
+    mode: Advanced
+    user_label: PA7
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PB7:
+    name: PB7
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB7
+    mode: Advanced
+    user_label: PB7
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PB6:
+    name: PB6
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB6
+    mode: Advanced
+    user_label: PB6
+    configuration:
+      pad_pull_config: Pull-up
+  PB5:
+    name: PB5
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB5
+    mode: Advanced
+    user_label: PB5
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PB4:
+    name: PB4
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB4
+    mode: Advanced
+    user_label: PB4
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  RED_LED:
+    name: PB3
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB3
+    mode: Digital output
+    user_label: RED_LED
+    configuration: null
+  GREEN_LED:
+    name: PB2
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PB2
+    mode: Digital output
+    user_label: GREEN_LED
+    configuration: null
+  COLUMN1:
+    name: PC0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC0
+    mode: Advanced
+    user_label: COLUMN1
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense low Level
+      pad_pull_config: Pull-up
+  COLUMN2:
+    name: PC1
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC1
+    mode: Advanced
+    user_label: COLUMN2
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense low Level
+      pad_pull_config: Pull-up
+  COLUMN3:
+    name: PC2
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC2
+    mode: Advanced
+    user_label: COLUMN3
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense low Level
+      pad_pull_config: Pull-up
+  COLUMN0:
+    name: PC3
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC3
+    mode: Advanced
+    user_label: COLUMN0
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Sense low Level
+      pad_pull_config: Pull-up
+  PC4:
+    name: PC4
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC4
+    mode: Advanced
+    user_label: PC4
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PC5:
+    name: PC5
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PC5
+    mode: Advanced
+    user_label: PC5
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  PA0:
+    name: PA0
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA0
+    mode: Advanced
+    user_label: PA0
+    configuration:
+      pad_dir: In
+      pad_initial_level: Low
+      pad_invert: Not inverted
+      pad_isc: Digital Input Buffer disabled
+      pad_pull_config: Pull-up
+  ROW3:
+    name: PA1
+    definition: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::pad::PA1
+    mode: Digital output
+    user_label: ROW3
+    configuration: null
+toolchain_options:
+- definition:
+    identifier: Atmel:ATtiny1624_26_27_drivers:1.0.0::ATtiny1627-MUR::environment_definition::All:Atmel.Studio:7.0.0
+  configuration:
+    compiler_config:
+      avrgcc_compiler_miscellaneous_OtherFlags: -std=gnu99
+    linker_config:
+      avrgcc_linker_miscellaneous_LinkerFlags: ''
