@@ -1,6 +1,6 @@
-<p align="left">
-  <img width=200px height=auto src="graphics/logo_MCHP_horizontal.png">
-</p>
+<a href="https://microchip.com" target="_blank" align="left">
+  <img width=200px height=auto src="images/MicrochipLogo.png">
+</a>
 
 
 # AN3407 -  Using Matrix Keypad With AVR® Devices
@@ -31,6 +31,6 @@ The application note explaining the concepts used in this repository can be foun
 * The pin-code “123ABC” is programmed to be the passcode. Try pressing this code followed by pound (#) to observe the green LED flashing. Try a different code to observe the red LED flashing.
 
 <p align="left">
-  <img width=800px height=auto src="graphics/connection_diagram.png">
+  <img width=800px height=auto src="images/connection_diagram.png">
   <br>Connection Diagram<br>
 </p>
