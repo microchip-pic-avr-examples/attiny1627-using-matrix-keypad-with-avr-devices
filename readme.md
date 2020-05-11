@@ -37,9 +37,9 @@ The examples in this application note may easily be changed to interface a small
   * Column 2: PC1
   * Column 3: PC2
 * Connect the green LED and a resistor in series between VTG and PB2
-* Connect the red LED and a resistor in series between VTG and PB3 
+* Connect the red LED and a resistor in series between VTG and PB3
 
-![Connection Diagram](images/connection_diagram.png "Connection Diagram")
+![Connection Diagram](images/connection_diagram.svg "Connection Diagram")
 
 ## Operation
 
