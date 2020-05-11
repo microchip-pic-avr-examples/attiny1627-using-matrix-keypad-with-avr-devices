@@ -1,10 +1,6 @@
 pipeline {
     agent {
-        kubernetes {
-            label 'attiny1627-how-to-use-the-12-bit-differential-adc'
-			defaultContainer 'debian'
-            yamlFile 'cloudprovider.yml'
-        }
+				label 'idc-dk-i14545.microchip.com'
     }
 
     parameters {
@@ -33,6 +29,16 @@ pipeline {
             }
         }
 
+		stage('Build') {
+            steps {
+				script {
+					execute("git clone https://bitbucket.microchip.com/scm/~i20936/tool-studio-c-build.git")
+					execute("cd tool-studio-c-build && python studiobuildtool.py")	
+							
+				}
+            }
+        }	
+		
         stage('Deploy') {
 			when {
 				not { 
@@ -47,7 +53,7 @@ pipeline {
 					execute("git clone ${env.DEPLOY_TOOL_URL}")		
 					
 					withCredentials([usernamePassword(credentialsId: '8bit-examples.github.com', usernameVariable: 'USER_NAME', passwordVariable:'USER_PASS' )]) {					
-						execute("cd ${env.DEPLOY_SCRIPT_DIR} && bash ${env.DEPLOY_SCRIPT_FILE} ${env.BITBUCKET_URL} ${env.GITHUB_URL} ${USER_NAME} ${USER_PASS} '--tag ${env.TAG_NAME}'")	
+						execute("cd ${env.DEPLOY_SCRIPT_DIR} && sh ${env.DEPLOY_SCRIPT_FILE} ${env.BITBUCKET_URL} ${env.GITHUB_URL} ${USER_NAME} ${USER_PASS} '--tag ${env.TAG_NAME}'")
 					}	
 
                     sendSuccessfulGithubDeploymentEmail()					
@@ -63,7 +69,10 @@ pipeline {
             }
         }
         always {
-            archiveArtifacts artifacts: "tool-mplabx-c-build/output/**", allowEmptyArchive: true, fingerprint: true
+            archiveArtifacts artifacts: "tool-studio-c-build/output/**", allowEmptyArchive: true, fingerprint: true
+			script{
+				cleanWs()
+			}
         }
     }
 }
