@@ -8,16 +8,22 @@ The examples in this application note may easily be changed to interface a small
 
 ## Related Documentation
 
-<!-- Any information about an application note or tech brief can be linked here. Use unbreakable links! -->
-The application note explaining the concepts used in this repository can be found at https://microchip.com/DS00003407.
+* [AN3407 - Using Matrix Keypad With AVR® Devices](https://microchip.com/DS00003407)
+* [ATtiny1627 device page](https://www.microchip.com/wwwproducts/en/ATTINY1627)
 
 ## Software Used
+* [Atmel Studio](https://www.microchip.com/mplab/avr-support/atmel-studio-7) 7.0.2397 or later
+* Atmel Studio ATtiny_DFP version 1.4.308 or later
 
-<!-- All software used in this example must be listed here. Use unbreakable links! -->
 
 ## Hardware Used
+* [Microchip ATtiny1627 Curiosity Nano Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/DM080104)
+* A 4x4 Matrix Keypad
+* Two LEDs
+* Two resistors
+* Micro-USB cable (Type-A/Micro-B)
 
-<!-- All hardware used in this example must be listed here. Use unbreakable links! -->
+
 
 ## Setup
 
@@ -30,16 +36,19 @@ The application note explaining the concepts used in this repository can be foun
   * Column 1: PC0
   * Column 2: PC1
   * Column 3: PC2
-* Connect the red LED to PB3 and the green LED to PB2
+* Connect the green LED and a resistor in series between VTG and PB2
+* Connect the red LED and a resistor in series between VTG and PB3 
 
 ![Connection Diagram](images/connection_diagram.png "Connection Diagram")
 
 ## Operation
 
-* Connect the ATtiny1627 Curiosity Nano to a computer using a USB cable
-* Download the application and program it to the ATtiny1627 Curiosity Nano
+* Connect the ATtiny1627 Curiosity Nano to a computer using the USB cable
+* Download the zip file or clone the example to get the source code
+* Open the .atsln file with Atmel Studio
+* Choose one of the two code projects and program the ATtiny1627
 * The pin-code “123ABC” is programmed to be the passcode. Try pressing this code followed by pound (#) to observe the green LED flashing. Try a different code to observe the red LED flashing.
 
 ## Conclusion
 
-<!-- Summarize what the example has shown -->
+This example has shown two ways of implementing a matrix keypad with an AVR® microcontroller.
