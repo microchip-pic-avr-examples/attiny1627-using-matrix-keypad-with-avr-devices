@@ -86,8 +86,8 @@
         <NonsecureFilesInfo />
       </AcmeProjectConfig>
     </AcmeProjectConfig>
-    <avrtool>com.atmel.avrdbg.tool.powerdebugger</avrtool>
-    <avrtoolserialnumber>J50200001963</avrtoolserialnumber>
+    <avrtool>com.atmel.avrdbg.tool.nedbg</avrtool>
+    <avrtoolserialnumber>MCHP3258021800000150</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x1E9428</avrdeviceexpectedsignature>
     <avrtoolinterface>UPDI</avrtoolinterface>
     <com_atmel_avrdbg_tool_nedbg>
@@ -98,10 +98,10 @@
         <InterfaceName>UPDI</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.nedbg</ToolType>
-      <ToolNumber>ATML3258011800000007</ToolNumber>
+      <ToolNumber>MCHP3258021800000150</ToolNumber>
       <ToolName>nEDBG</ToolName>
     </com_atmel_avrdbg_tool_nedbg>
-    <avrtoolinterfaceclock>500000</avrtoolinterfaceclock>
+    <avrtoolinterfaceclock>750000</avrtoolinterfaceclock>
     <com_atmel_avrdbg_tool_jtagice3plus>
       <ToolOptions>
         <InterfaceProperties>
@@ -116,7 +116,7 @@
     <com_atmel_avrdbg_tool_powerdebugger>
       <ToolOptions>
         <InterfaceProperties>
-          <UpdiClock>500000</UpdiClock>
+          <UpdiClock>0</UpdiClock>
         </InterfaceProperties>
         <InterfaceName>UPDI</InterfaceName>
       </ToolOptions>
@@ -128,7 +128,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGcc>
-        <avrgcc.common.Device>-mmcu=attiny1627 -B "%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.308\gcc\dev\attiny1627"</avrgcc.common.Device>
+        <avrgcc.common.Device>-mmcu=attiny1627 -B "%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.309\gcc\dev\attiny1627"</avrgcc.common.Device>
         <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
         <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
         <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -149,7 +149,7 @@
             <Value>../</Value>
             <Value>../Config</Value>
             <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.301\include</Value>
-            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.308\include</Value>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.309\include</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -169,7 +169,7 @@
             <Value>../utils/assembler</Value>
             <Value>../</Value>
             <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.301\include</Value>
-            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.308\include</Value>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.309\include</Value>
           </ListValues>
         </avrgcc.assembler.general.IncludePaths>
       </AvrGcc>
@@ -178,7 +178,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-        <avrgcc.common.Device>-mmcu=attiny1627 -B "%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.308\gcc\dev\attiny1627"</avrgcc.common.Device>
+        <avrgcc.common.Device>-mmcu=attiny1627 -B "%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.309\gcc\dev\attiny1627"</avrgcc.common.Device>
         <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
         <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
         <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -199,7 +199,7 @@
             <Value>../</Value>
             <Value>../Config</Value>
             <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.301\include</Value>
-            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.308\include</Value>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.309\include</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -220,7 +220,7 @@
             <Value>../utils/assembler</Value>
             <Value>../</Value>
             <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.301\include</Value>
-            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.308\include</Value>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.4.309\include</Value>
           </ListValues>
         </avrgcc.assembler.general.IncludePaths>
         <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
