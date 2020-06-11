@@ -10,8 +10,8 @@ pipeline {
     }
 	
 	environment {		
-		GITHUB_URL ='https://github.com/microchip-pic-avr-examples/attiny1627-how-to-use-the-12-bit-differential-adc.git'
-		BITBUCKET_URL = 'https://bitbucket.microchip.com/scm/ebe/attiny1627-how-to-use-the-12-bit-differential-adc.git'
+		GITHUB_URL ='https://github.com/microchip-pic-avr-examples/attiny1627-using-matrix-keypad-with-avr-devices.git'
+		BITBUCKET_URL = 'https://bitbucket.microchip.com/scm/ebe/attiny1627-using-matrix-keypad-with-avr-devices.git'
 		DEPLOY_TOOL_URL = 'https://bitbucket.microchip.com/scm/citd/tool-github-deploy.git'
 		DEPLOY_SCRIPT_DIR = 'tool-github-deploy'
 		DEPLOY_SCRIPT_FILE = 'deploy-source-as-is.sh'
