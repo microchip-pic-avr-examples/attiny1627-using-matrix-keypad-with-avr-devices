@@ -3,27 +3,27 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.studio.project.",
-        "version": " ",
-        "displayName": "  ",
-        "projectName": "",
-        "shortDescription": "",
+        "name": "com.microchip.mcu8.studio.project.attiny1627-using-matrix-keypad-with-avr-devices",
+        "version": "1.0.1",
+        "displayName": "Using Matrix Keypad With AVR Devices",
+        "projectName": "attiny1627-using-matrix-keypad-with-avr-devices",
+        "shortDescription": "This application demonstrates a simple keypad implementation, and more advanced features to reduce power consumption.",
         "ide": {
-            "name": "",
-            "semverRange": ""
+            "name": "STUDIO",
+            "semverRange": ">= 7.0.2397"
         },
         "compiler": [
-			{
-				"name": "",
-				"semverRange": ""
-			}
-		],
+            {
+                "name": "AVR GCC",
+                "semverRange": "^5.4.0"
+            }
+        ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "ATtiny_DFP",
+            "semverRange": "^1.4.310"
         },
         "configurator": {
-            "name": "",
+            "name": "N/A",
             "semverRange": ""
         },
         "device": {
@@ -32,37 +32,50 @@
             "content": {
                 "metaDataVersion": "1.0.0",
                 "category": "com.microchip.device",
-                "name": "",
+                "name": "ATtiny1627",
                 "versionRange": "*"
             }
         },
-        "author": "",
+        "author": "Amund Aune",
+        
         "subcategories": [
-            "",
             [
-               "Peripherals", ""
+                "Peripherals","PORT"
             ],
             [
-               "Peripherals", ""
-            ]            			
+                "Peripherals", "RTC"
+            ],
+            [
+                "Peripherals", "PIT"
+            ],
+            [
+                "Peripherals", "SLPCTRL"
+            ]
         ],
         "peripherals": [
-            "",""
+            "RTC",
+            "PIT",
+            "PORT",
+            "SLPCTRL"
         ],
         "keywords": [
-            "",
-            ""			
+            "Matrix Keypad",
+            "Low Power",
+            "User Interface",
+            "Pin Interrupt",
+            "Power Down",
+            "Pull ups"
         ],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./README.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
-	}
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./README.md",
+                    "mimeType": "text/markdown"
+                }
+            }
+        }
+    }
 }
